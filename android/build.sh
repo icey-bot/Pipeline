@@ -9,7 +9,7 @@ echo "--- Syncing"
 cd /buildkite/src
 rm -rf .repo/local_manifests/*
 repo init -u https://github.com/Project-1CE/manifest -b sugisawa --depth 1
-repo forall -vc "git clean -fdx; git checkout -f"
+# repo forall -vc "git clean -fdx; git checkout -f"
 repo sync -c -j$(nproc --all) --force-sync --fail-fast --no-clone-bundle --no-tags || exit 1
 
 echo "--- Cleaning"
